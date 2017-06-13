@@ -33,7 +33,7 @@ object StreamForeach2App extends App{
   done.onComplete(_ => system.terminate())
 }
 
-// never ending app2:
+// app which ends after stream is completed2:
 object streamSeq2App extends App{
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
