@@ -53,3 +53,12 @@ object streamSeq2App extends App{
       system.terminate()
   }
 }
+
+// steram with buffer stage:
+object StreamBufferApp extends App{
+  implicit val system = ActorSystem()
+  implicit val materializer = ActorMaterializer()
+
+  val s = new SimpleStream
+  val done: NotUsed = s.bufferStream.run()
+}
